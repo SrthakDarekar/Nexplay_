@@ -1,0 +1,234 @@
+:root{
+    --primary-color: #030308;
+    --text-color: #00c3ff;
+    --card-color: #0a0a16;
+    --surface-color: #0d0d1a;
+}
+
+body{
+    background-color:var(--primary-color);
+    margin: 0;
+    padding: 10px;
+}
+
+.nav-logo-text-1{
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Ultra", serif;
+}
+
+.nav-logo-text-2{
+
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: "Ultra", serif;
+}
+
+.navbar{
+    background-color: var(--surface-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60px;
+    padding: 0 20px;
+    border-radius: 7px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border: 1px solid rgba(0,195,255,0.15);
+    font-family:"Grenze", serif;
+    gap: 12px;
+}
+
+.navbar{
+    position: sticky;
+    z-index: 1000;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: rgba(0, 195, 255, 0.1);
+}
+
+.nav-link.active {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+
+/* .nav-user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} */
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-login{
+    color: #000;
+    padding: 3px 14px;
+    border:1px solid #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: #06b6d4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+}
+
+.nav-login:hover{
+    transform:scale(1.05);
+    transition: transform 0.3s ease;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.nav-join:hover{
+    transform:scale(1.05);
+    transition: transform 0.3s ease;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.nav-join{
+    color: #000;
+    padding: 3px 14px;
+    border:1px solid #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: #7c3aed;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bi-box-arrow-in-right{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.bi-person-add{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+/* login page css */
+
+#togglePassword{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    width:auto;
+    font-size: 18px;
+    border:1px solid black;
+}
+
+#togglePassword:hover{
+    border: 1px solid black;;
+    transform: scale(1.02);
+    transition:all 0.5s ease;
+}
+
+.toggle-password-btn{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    width:auto;
+    font-size: 18px;
+    border:1px solid black;
+}
+
+.toggle-password-btn:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;;
+    transform: scale(1.02);
+    transition:all 0.5s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 8px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-link,
+    .nav-login,
+    .nav-join {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .nav-login,
+    .nav-join {
+        margin-top: 6px;
+    }
+
+    .carousel-caption h1{
+        font-size: 2rem;
+    }
+
+    .carousel-caption p{
+        font-size: 1rem;
+    }
+
+    .carousel-item img{
+        height: 40vh !important;
+    }
+
+}

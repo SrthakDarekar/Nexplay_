@@ -1,0 +1,15 @@
+color idea
+
+Background stack: #030308 (page) → #0d0d1a (surface) → #0a0a16 (cards). Three distinct depths without being flat.
+
+
+Purple #7c3aed
++
+Cyan #06b6d4
+
+info/highlights. These two together scream cyberpunk without being cliché.
+
+
+Red #ef4444 for live/danger states, Green #4ade80 for open/success.
+
+Amber #f59e0b reserved only for prizes and ranks — it signals money and prestige instantly.

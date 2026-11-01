@@ -1,0 +1,35 @@
+<div class="navbar">
+    <div class="logo">
+        <a class="nav-logo" href="/"><span class="nav-logo-text-1">Gaming</span><span
+                class="nav-logo-text-2">Hub</span></a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" onclick="toggleNavMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        {% if session.get("loggedin") %}
+        <a class="nav-link" href="/">{{ session["firstname"] }} {{ session["lastname"] }}</a>
+        <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
+        <a class="nav-link {% if active_page == 'tournament' %}active{% endif %}" href="/tournament">Tournament</a>
+        <a class="nav-link {% if active_page == 'leaderboard' %}active{% endif %}" href="/leaderboard">Leaderboard</a>
+        <a class="nav-link {% if active_page == 'joined' %}active{% endif %}" href="/joined">Joined</a>
+        <a class="nav-link" href="/logout">Logout</a>
+        {% else %}
+        <a class="nav-login" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+        <a class="nav-join" href="/join"><i class="bi bi-person-add"></i>Join</a>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+function toggleNavMenu() {
+    const navLinks = document.getElementById('navLinks');
+    if (navLinks) {
+        navLinks.classList.toggle('open');
+    }
+}
+</script>

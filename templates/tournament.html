@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% set active_page = 'tournament' %}
+
+{% block content %}
+
+<section class="tournaments mt-5">
+    <div class="filter-bar">
+        <select id="game-filter" onchange="filterCards(this.value)">
+            <option value="All">All Games</option>
+            <option value="Mobile Legends">Mobile Legends</option>
+            <option value="BGMI">BGMI</option>
+            <option value="Fortnite">Fortnite</option>
+            <option value="Valorant">Valorant</option>
+            <option value="CS2">CS2</option>
+            <option value="Free Fire">Free Fire</option>
+        </select>
+    </div>
+
+    {% include 'cards.html' %}
+</section>
+{% endblock %}

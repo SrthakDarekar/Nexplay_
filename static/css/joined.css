@@ -1,0 +1,64 @@
+.joined-container {
+    color: white;
+    width: 100%;
+    max-width: none;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.joined-cards {
+    width: 95%;
+    margin: 0 auto 1.5rem;
+    border: 1px solid #00c3ff;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0a0a16;
+}
+
+.joined-cards:hover{
+    transform: scale(1.01);
+}
+
+.joined-container table {
+    width: 100%;
+    margin: 0;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 1.25rem;
+}
+
+.joined-container tr {
+    color: white;
+}
+
+.joined-container th,
+.joined-container td {
+    padding: 1.25rem;
+}
+
+.leavetour button{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Elms Sans", sans-serif !important;
+    font-weight: bold;
+    background-color: black;
+    
+}
+
+.leavetour {
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .joined-container table {
+        font-size: 1rem;
+    }
+
+    .joined-container th,
+    .joined-container td {
+        padding: 0.75rem;
+    }
+}

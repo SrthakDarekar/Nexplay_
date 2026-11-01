@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% set active_page = 'home' %}
+
+
+{% block content %}
+
+<main class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+
+            <form action="/login" method="post" style="color: white;" class="p-5 border rounded-3 bg-dark">
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form2Example1" class="form-control" name="email"
+                        placeholder="GamingTournament@gmail.com" required />
+                    <label class="form-label" for="form2Example1">Email address</label>
+                </div>
+
+                <!-- Password input -->
+                <!-- <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="password" id="form2Example2" class="form-control" name="password" placeholder="Enter your password" required />
+                    <label class="form-label" for="form2Example2">Password</label>
+                    <button type="button" class="btn btn-link px-2" id="togglePassword">
+                        <i class="bi bi-eye-slash" id="togglePasswordIcon"></i>
+                    </button>
+                </div> -->
+                <div class="input-group">
+                    <input type="password" id="passwordField" name="password" class="form-control" placeholder="Password" required>
+                    <button class="btn btn-link px-2" type="button" id="togglePassword">
+                        <i id="togglePasswordIcon" class="bi bi-eye"></i>
+                    </button>
+                </div>
+                <label class="form-label mb-4" for="passwordField">Password</label>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+                            <label class="form-check-label" for="form2Example34"> Remember me </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- Simple link -->
+                        <a href="/forgot-password">Forgot password?</a>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>Not a member? <a href="/join">join now</a></p>
+                    <p>or sign up with:</p>
+                    <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="bi bi-facebook"></i>
+                    </button>
+
+                    <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="bi bi-google"></i>
+                    </button>
+
+                    <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="bi bi-twitter"></i>
+                    </button>
+
+                    <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                        <i class="bi bi-github"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<!-- <script src="{{ url_for('static', filename='js/pass_toggle.js') }}"></script> -->
+<script>
+    var passs=document.getElementById("passwordField");
+    var btn = document.getElementById("togglePassword");
+    var icon = document.getElementById("togglePasswordIcon");
+
+    btn.addEventListener("click", () => {
+        if (passs.type === "password") {
+            passs.type = "text";
+            icon.classList.remove("bi-eye");
+            icon.classList.add("bi-eye-slash");
+        } else {
+            passs.type = "password";
+            icon.classList.remove("bi-eye-slash");
+            icon.classList.add("bi-eye");
+        }
+    });
+    
+</script>
+
+{% endblock %}

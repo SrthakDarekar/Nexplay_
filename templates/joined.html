@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% set active_page = 'joined' %}
+
+{% block content %}
+
+<div class="joined-container mt-5">
+    {% for m in matches%}
+    <div class="joined-cards">
+        <table class="table table-bordered">
+            <tr>
+                <th>game</th>
+                <th>Tournament Name</th>
+                <th>Status</th>
+                <th>Price Pull</th>
+            </tr>
+            <tr>
+                <td>
+                    {{ m.game }}
+                </td>
+                <td>
+                    {{ m.Tournament_name }}
+                </td>
+                <td>
+                    {{ m.status }}
+                </td>
+                <td>
+                    {{ m.prize_pull }}
+                </td>
+                <td class="leavetour">
+                    <form action="{{ url_for('leave',match_id=m.id)}}" method="post">
+                        <button type="submit">Leave</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

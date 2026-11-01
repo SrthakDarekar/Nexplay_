@@ -1,0 +1,86 @@
+<div class="cards-container">
+    {% for match in matches %}
+    <div class="tournament-card mt-5" data-game="{{ match.game }}">
+        <p class="gamename">Game: {{ match.game }}</p>
+        <h4 class="trname">{{ match.Tournament_name }}</h4>
+        <div class="status">
+            {% if match.status == 'Live' %}
+
+            <p class="status-live">
+                🔴 Live
+            </p>
+
+            {% elif match.status == 'Upcoming' %}
+
+            <p class="status-upcoming">
+                🟡 Upcoming
+            </p>
+
+            {% elif match.status == 'Completed' %}
+
+            <p class="status-completed">
+                ✅ Completed
+            </p>
+
+            {% else %}
+
+            <p class="status-cancelled">
+                ❌ Cancelled
+            </p>
+
+            {% endif %}
+        </div>
+        <div class="card-footer">
+
+            <h5 class="prize-pool">${{ "{:,}".format(match.prize_pull) }}
+                <p class="prize-text">Prize Pool</p>
+            </h5>
+            {% if session.get("loggedin") %}
+            <form action="{{ url_for('joined_tournament', match_id=match.id) }}" method="post">
+                <button type="submit" class="match-btn" onclick="showJoinAlert('{{ match.status }}')">Join</button>
+            </form>
+            {% else %}
+            <a href="/join" class="match-btn">Join</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function showJoinAlert(status) {
+        const normalizedStatus = (status || '').toLowerCase();
+
+        if (normalizedStatus === 'upcoming') {
+            Swal.fire({
+                icon: "success",
+                title: "Joined!",
+                text: "You have successfully joined the tournament."
+            });
+        } else if (normalizedStatus === 'cancelled') {
+            Swal.fire({
+                icon: "error",
+                title: "Cancelled!",
+                text: "This match has been cancelled. Please check back later for updates."
+            });
+        } else if (normalizedStatus === 'live') {
+            Swal.fire({
+                icon: "warning",
+                title: "Live Match!",
+                text: "This match is already live. Please wait for the next match to join."
+            });
+        } else if (normalizedStatus === 'completed') {
+            Swal.fire({
+                icon: "info",
+                title: "Completed!",
+                text: "This match has already been completed."
+            });
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Unavailable!",
+                text: "This match is not available right now."
+            });
+        }
+    }
+</script>
