@@ -1,0 +1,29 @@
+.Main-footer {
+    color: white;
+    font-family: "Rajdhani";
+    font-size: large;
+}
+
+.Main-footer a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.Main-footer a:hover{
+    color: #06b6d4 !important;
+    transform: scale(1.02) !important;
+    transition: all ease-in-out 0.3s;
+}
+
+.text-uppercase {
+    color: rgba(211, 210, 210, 0.856);
+}
+
+.Page-title {
+    color: #06b6d4;
+}
+
+.footer {
+    margin-top: 50px;
+}
