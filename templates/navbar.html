@@ -15,7 +15,6 @@
         <a class="nav-link" href="/">{{ session["firstname"] }} {{ session["lastname"] }}</a>
         <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
         <a class="nav-link {% if active_page == 'tournament' %}active{% endif %}" href="/tournament">Tournament</a>
-        <a class="nav-link {% if active_page == 'leaderboard' %}active{% endif %}" href="/leaderboard">Leaderboard</a>
         <a class="nav-link {% if active_page == 'joined' %}active{% endif %}" href="/joined">Joined</a>
         <a class="nav-link" href="/logout">Logout</a>
         {% else %}

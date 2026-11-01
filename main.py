@@ -51,10 +51,6 @@ def tournament():
     match=matches.query.all()
     return render_template('tournament.html',matches=match)
 
-@app.route('/leaderboard')
-def leaderboard():
-    return render_template('leaderboard.html')
-
 @app.route('/joined')
 def joined():
     if "loggedin" in session:
