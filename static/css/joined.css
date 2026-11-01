@@ -51,14 +51,3 @@
 .leavetour {
     text-align: center;
 }
-
-@media (max-width: 576px) {
-    .joined-container table {
-        font-size: 1rem;
-    }
-
-    .joined-container th,
-    .joined-container td {
-        padding: 0.75rem;
-    }
-}

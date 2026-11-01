@@ -44,20 +44,3 @@
     font-family: "Orbitron", sans-serif;
     font-weight: bold;
 }
-
-
-
-@media (max-width: 768px) {
-    .custom-carousel h1 {
-        font-size: 28px;
-    }
-
-    .custom-carousel p {
-        font-size: 16px;
-    }
-
-    .btn-join {
-        padding: 5px 15px;
-        font-size: 16px;
-    }
-}
